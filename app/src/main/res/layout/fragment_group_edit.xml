@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appColor"
+    tools:context=".groupEdit.GroupEditFragment">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_group_image"
+        android:layout_width="@dimen/_80dp"
+        android:layout_height="@dimen/_80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_30dp"
+        android:background="@drawable/home_round_shape"
+        android:padding="@dimen/_30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_group_image">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_name_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_semibold"
+            android:text="@string/name"
+            android:textColor="@color/appColor"
+            android:textSize="@dimen/_18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30dp"
+            android:background="@drawable/bottom_border"
+            android:fontFamily="@font/inter"
+            android:maxLength="50"
+            android:padding="@dimen/_10dp"
+            android:singleLine="true"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name_title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_name_limit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name_limit"
+            app:layout_constraintEnd_toEndOf="@+id/et_name"
+            app:layout_constraintTop_toBottomOf="@+id/et_name" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_40dp"
+            android:fontFamily="@font/inter_semibold"
+            android:text="@string/about_group"
+            android:textColor="@color/appColor"
+            android:textSize="@dimen/_18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name_limit" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_about"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="@dimen/_18dp"
+            android:background="@drawable/rounded_light_grey_background"
+            android:fontFamily="@font/inter"
+            android:gravity="top"
+            android:maxLength="500"
+            android:padding="@dimen/_10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_about" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_about_limit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/about_limit"
+            app:layout_constraintEnd_toEndOf="@+id/et_about"
+            app:layout_constraintTop_toBottomOf="@+id/et_about" />
+
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_50dp"
+            android:background="@drawable/rounded_cancel"
+            android:fontFamily="@font/inter_semibold"
+            android:paddingStart="@dimen/_40dp"
+            android:paddingEnd="@dimen/_40dp"
+            android:text="@string/cancel"
+            app:layout_constraintEnd_toStartOf="@+id/btn_submit"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_about_limit"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20dp"
+            android:layout_marginTop="@dimen/_50dp"
+            android:background="@drawable/rounded_background"
+            android:fontFamily="@font/inter_semibold"
+            android:paddingStart="@dimen/_40dp"
+            android:paddingEnd="@dimen/_40dp"
+            android:text="@string/submit"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_cancel"
+            app:layout_constraintTop_toBottomOf="@+id/tv_about_limit" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

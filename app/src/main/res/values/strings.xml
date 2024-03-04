@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">GroupsApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="about_group">About Group</string>
+    <string name="name">Name</string>
+    <string name="name_limit">0/50</string>
+    <string name="cancel">Cancel</string>
+    <string name="submit">Submit</string>
+    <string name="about_limit">0/500</string>
+</resources>

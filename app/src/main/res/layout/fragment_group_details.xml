@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appColor"
+    tools:context=".groupDetails.GroupDetailsFragment">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_group_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_group_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_18sp"
+        app:fontFamily="@font/inter_bold"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/iv_group_image"
+        app:layout_constraintStart_toStartOf="@+id/iv_group_image"
+        app:layout_constraintTop_toBottomOf="@+id/iv_group_image" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_group_bio"
+        android:singleLine="true"
+        app:fontFamily="@font/inter_medium"
+        android:maxEms="10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_13sp"
+        app:layout_constraintEnd_toEndOf="@+id/iv_group_image"
+        app:layout_constraintStart_toStartOf="@+id/iv_group_image"
+        app:layout_constraintTop_toBottomOf="@+id/tv_group_name" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gu_vertical"
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_group_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/mdi_users_white"
+        app:layout_constraintEnd_toStartOf="@+id/gu_vertical"
+        app:layout_constraintTop_toBottomOf="@+id/tv_group_bio" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:id="@+id/tv_count"
+        app:fontFamily="@font/inter"
+        android:layout_height="wrap_content"
+        android:text="100"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_group_icon"
+        app:layout_constraintStart_toEndOf="@+id/gu_vertical"
+        app:layout_constraintTop_toTopOf="@+id/iv_group_icon" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/home_round_shape"
+        android:padding="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_group_icon">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/about_group"
+            app:fontFamily="@font/inter_semibold"
+            android:textColor="@color/appColor"
+            android:textSize="@dimen/_18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_18dp"
+            android:id="@+id/tv_about"
+            android:background="@drawable/rounded_light_grey_background"
+            android:padding="@dimen/_20dp"
+            app:fontFamily="@font/inter"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
