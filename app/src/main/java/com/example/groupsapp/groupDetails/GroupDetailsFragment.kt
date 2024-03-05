@@ -53,6 +53,15 @@ class GroupDetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val groupId = arguments?.getString("groupId")
+        val status = arguments?.getString("status")
+
+        if (status == "Admin") {
+            tvEdit = toolbar.findViewById(R.id.tvEdit)
+            tvEdit.visibility = View.VISIBLE
+        }else{
+            tvEdit = toolbar.findViewById(R.id.tvEdit)
+            tvEdit.visibility = View.GONE
+        }
 
         groupId?.let { mViewModel.getGroupDetails(it) }
         setUpObservers()
@@ -63,15 +72,6 @@ class GroupDetailsFragment : Fragment() {
             if (it?.message == "OK") {
 
                 val data = it.result
-
-                if (it.result.user_status == "Admin") {
-                    println("it.result.user_status" + it.result.user_status)
-                    tvEdit = toolbar.findViewById(R.id.tvEdit)
-                    tvEdit.visibility = View.VISIBLE
-                }else{
-                    tvEdit = toolbar.findViewById(R.id.tvEdit)
-                    tvEdit.visibility = View.GONE
-                }
 
                 Glide.with(requireActivity()).load(it.result.group_photo)
                     .into(_binding.ivGroupImage)

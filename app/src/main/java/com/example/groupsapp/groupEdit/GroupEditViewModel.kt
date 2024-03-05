@@ -41,7 +41,6 @@ class GroupEditViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 val groupInfo = groupRepository.getGroupInfo(groupId)
-                println("groupInfo...." + groupInfo)
                 _groupInfo.value = groupInfo
             } catch (e: Exception) {
                 e.printStackTrace()

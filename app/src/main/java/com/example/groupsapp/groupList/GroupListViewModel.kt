@@ -18,20 +18,28 @@ class GroupListViewModel @Inject constructor(
     private val _groupResponse = SingleLiveEvent<groupList?>()
     val groupResponse: SingleLiveEvent<groupList?> = _groupResponse
 
+    private val _loading = SingleLiveEvent<Boolean?>()
+    val loading: SingleLiveEvent<Boolean?> = _loading
+
     fun getGroupDetails() {
         viewModelScope.launch {
             try {
                 groupRepository.getGroupList().collect { response: ResourceState<groupList> ->
                     when (response) {
                         is ResourceState.Success -> {
+                            _loading.value = false
                             if (response.data.message == "OK") {
                                 _groupResponse.value = response.data
                             }
                         }
 
-                        is ResourceState.Error -> {}
+                        is ResourceState.Error -> {
+                            _loading.value = false
+                        }
 
-                        is ResourceState.Loading -> {}
+                        is ResourceState.Loading -> {
+                            _loading.value = true
+                        }
 
                         else -> {}
                     }
